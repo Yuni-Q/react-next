@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // "baseUrl": ".",
+    // "outDir": "build/dist",
+    // "module": "esnext",
+    // "allowJs": true,
+    "jsx": "react",
+    "target": "es5",
+    "module": "commonjs",
+    // "lib": ["es6", "dom"],
+    // "sourceMap": true,
+    // "allowJs": true,
+    
+    "moduleResolution": "node",
+    // "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    // "importHelpers": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "sourceMap": false,
+    "outDir": "."
+    
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    // "sesrver.ts",
+    // "routes.ts"
+    // "node_modules",
+    // "build",
+    // "scripts",
+    // "acceptance-tests",
+    // "webpack",
+    // "jest",
+    // "src/setupTests.ts"
+  ]
+}
