@@ -69,3 +69,5 @@ development.json
 production.json
 yarn.lock
 *.js
+__snapshots__
+*.snap

@@ -3,6 +3,8 @@
 
 1. yarn 설치
 ```bash
+git clone https://github.com/Yuni-Q/react-next.git
+cd react-next
 yarn install
 ```
 
@@ -16,6 +18,18 @@ yarn run dev
 yarn run deploy production
 ```
 
+4. 테스트
+```bash
+yarn run test
+```
 
+5. Coverage Report
+```bahs
+yarn run test:cov
+open coverage/index.html
+```
 
-
+6. SnapShot Update
+```bahs
+yarn run test:update
+```
