@@ -33,3 +33,11 @@ open coverage/index.html
 ```bahs
 yarn run test:update
 ```
+
+7. heroku 배포
+```bash
+heroku login
+heroku create test
+git push heroku master
+heroku logs --tail
+```
