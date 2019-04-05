@@ -1,14 +1,10 @@
-import
-App,
-{
-  Container,
-}
-  from 'next/app';
+import App, { Container } from 'next/app';
 import * as React from 'react';
 import { Provider } from 'mobx-react';
 
 import { initStore } from '../common/store';
 // import {Header, Footer} from '../comps/CommonComps';
+// import * as serviceWorker from '../serviceWorker';
 
 class MyApp extends App<any, any> {
   private store: any;
@@ -27,6 +23,19 @@ class MyApp extends App<any, any> {
   }
 
   render() {
+    if (canUseDOM() && 'serviceWorker' in navigator) {      
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/static/main.js').then(function (registration: any) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err: any) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    } else {
+      console.log('...');
+    }
     const { Component, pageProps } = this.props
     return (
       <Container>
@@ -51,3 +60,13 @@ export interface getInitialContext {
 };
 
 export default MyApp;
+
+
+
+export function canUseDOM(): boolean {
+  return !!(
+    typeof window !== 'undefined' &&
+    window.document && window.document.createElement
+  );
+}
+// serviceWorker.register();

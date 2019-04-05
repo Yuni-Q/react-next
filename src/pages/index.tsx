@@ -18,6 +18,19 @@ class Index extends React.Component<any, any> {
     super(props)
   }
 
+  componentDidMount () {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then(registration => {
+          console.log('service worker registration successful')
+        })
+        .catch(err => {
+          console.warn('service worker registration failed', err.message)
+        })
+    }
+  }
+
   render() {
     return (
       <Layout>
@@ -25,7 +38,7 @@ class Index extends React.Component<any, any> {
           <title>Index</title>
         </Head>
         <div>
-          안녕
+          안녕하세요?
         </div>
       </Layout>
     )

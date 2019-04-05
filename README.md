@@ -41,3 +41,15 @@ heroku create test
 git push heroku master
 heroku logs --tail
 ```
+
+8. PWA
+```bash
+yarn install -g pwa-manifest-cli if-got-cli
+pwa-manifest ./static --icons=$(if-got icons search --query="facebook react react icon" --maximun_size=512 --count=1)
+yarn add --dev sw-precache-webpack-plugin-loader copy-webpack-plugin
+```
+
+
+
+
+ㅁㄴㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㅁㄴㅇㅁㄴ

@@ -12,7 +12,7 @@ export default class Layout extends React.Component {
         </Head>
         <nav>
         <Link route={"/"}>
-            React Next
+            <a>React Next</a>
           </Link>
           <div>
             <ul>
