@@ -1,9 +1,4 @@
-import
-App,
-{
-  Container,
-}
-  from 'next/app';
+import App, { Container } from 'next/app';
 import * as React from 'react';
 import { Provider } from 'mobx-react';
 
@@ -51,3 +46,10 @@ export interface getInitialContext {
 };
 
 export default MyApp;
+
+export function canUseDOM(): boolean {
+  return !!(
+    typeof window !== 'undefined' &&
+    window.document && window.document.createElement
+  );
+}

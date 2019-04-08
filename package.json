@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "8.15.0",
+    "npm": "6.x"
+  },
   "scripts": {
     "dev": "tsc && NODE_ENV=development node server.js",
     "test": "jest",
@@ -10,7 +14,7 @@
     "test:cov": "jest --coverage",
     "test:update": "jest --update-snapshot",
     "build": "tsc && next build",
-    "start": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "transpile": "tsc",
     "devwatch": "tsc -w",
     "next": "next",
@@ -22,15 +26,19 @@
     "@types/react": "^16.8.10",
     "express": "^4.16.4",
     "firebase": "^5.6.0",
+    "http": "0.0.0",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "next": "^7.0.2",
     "next-routes": "^1.4.2",
+    "path": "^0.12.7",
     "pm2": "^3.4.1",
     "prettier": "1.15.3",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "react-masonry-component": "^6.2.1",
+    "sw-precache-webpack-plugin": "^0.11.5",
+    "url": "^0.11.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

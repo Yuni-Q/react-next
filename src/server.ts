@@ -1,6 +1,8 @@
-// import * as express from 'express';
 const express = require('express');
 const next = require('next');
+const { createServer } = require('http')
+const { join } = require('path')
+const { parse } = require('url')
 
 const port = process.env.PORT || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -15,5 +17,18 @@ app.prepare().then(() => {
   server.use('static ', express.static('./static'));
   server.use(handle);
 
-  server.listen(port);
+  createServer((req: any, res: any) => {
+    const parsedUrl = parse(req.url, true)
+    const { pathname } = parsedUrl
+
+    if (pathname === '/service-worker.js') {
+      const filePath = join(__dirname, '.next', pathname)
+      app.serveStatic(req, res, filePath)
+    } else {
+      handle(req, res, parsedUrl)
+    }
+  }).listen(port, (err: any) => {
+    if (err) throw err
+    console.log(`> Ready on http://localhost:${port}`)
+  });
 });
