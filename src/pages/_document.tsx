@@ -11,6 +11,8 @@ export default class CustomDocument extends Document {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <link rel="manifest" href={`${publicRuntimeConfig.staticFolder}/manifest.json`}/>
+          <link rel="manifest" href={`${publicRuntimeConfig.staticFolder}/manifest.json`}/>
+          <link rel="stylesheet" href={`${publicRuntimeConfig.staticFolder}/style.css`}/>/>
         </Head>
         <body>
           <Main />
