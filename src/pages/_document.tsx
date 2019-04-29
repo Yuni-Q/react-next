@@ -4,6 +4,10 @@ import getConfig from 'next/config'
 
 
 export default class CustomDocument extends Document {
+  static async getInitialProps(ctx: any) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps }
+  }
   render() {
     const { publicRuntimeConfig } = getConfig()
     return (
