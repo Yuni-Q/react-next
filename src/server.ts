@@ -1,7 +1,9 @@
+import { resolve } from "path";
+
 const express = require('express');
 const next = require('next');
 const { createServer } = require('http')
-const { join } = require('path')
+// const { join } = require('path')
 const { parse } = require('url')
 
 const port = process.env.PORT || 3000;
@@ -21,9 +23,9 @@ app.prepare().then(() => {
     const parsedUrl = parse(req.url, true)
     const { pathname } = parsedUrl
 
-    if (pathname === '/service-worker.js') {
-      const filePath = join(__dirname, '.next', pathname)
-      app.serveStatic(req, res, filePath)
+    if (pathname === '/static/service-worker.js') {
+      // const filePath = join(__dirname, '.next', pathname)
+      app.serveStatic(req, res, resolve("./static/service-worker.js"))
     } else {
       handle(req, res, parsedUrl)
     }

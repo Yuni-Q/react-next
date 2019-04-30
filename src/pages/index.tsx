@@ -18,19 +18,6 @@ class Index extends React.Component<any, any> {
     super(props)
   }
 
-  componentDidMount () {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/service-worker.js')
-        .then(registration => {
-          console.log('service worker registration successful')
-        })
-        .catch(err => {
-          console.log('service worker registration failed', err.message)
-        })
-    }
-  }
-
   render() {
     return (
       <Layout>

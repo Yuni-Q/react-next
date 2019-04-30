@@ -21,6 +21,19 @@ class MyApp extends App<any, any> {
     this.store = initStore(this.props.isServer)
   }
 
+  componentDidMount () {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/static/service-worker.js')
+        .then(registration => {
+          console.log('service worker registration successful')
+        })
+        .catch(err => {
+          console.log('service worker registration failed', err.message)
+        })
+    }
+  }
+
   render() {
     const { Component, pageProps } = this.props
     return (

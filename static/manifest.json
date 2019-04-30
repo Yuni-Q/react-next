@@ -18,9 +18,10 @@
 			"type": "image/png"
 		}
 	],
-	"start_url": "/?name=YuniQ",
+	"start_url": "/",
 	"display": "standalone",
 	"orientation": "natural",
 	"background_color": "#FFFFFF",
-	"theme_color": "#3F51B5"
+	"theme_color": "#3F51B5",
+	"portrait": "portrait"
 }

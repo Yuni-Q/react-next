@@ -5,19 +5,19 @@ module.exports = {
     // Will be available on both server and client
     staticFolder: '/static'
   },
-  webpack: (config: any) => {
-    config.plugins.push(
-      new SWPrecacheWebpackPlugin({
-        verbose: true,
-        staticFileGlobsIgnorePatterns: [/\.next\//],
-        runtimeCaching: [
-          {
-            handler: 'networkFirst',
-            urlPattern: /^https?.*/
-          }
-        ]
-      })
-    )
-    return config
-  }
+  // webpack: (config: any) => {
+  //   config.plugins.push(
+  //     new SWPrecacheWebpackPlugin({
+  //       verbose: true,
+  //       staticFileGlobsIgnorePatterns: [/\.next\//],
+  //       runtimeCaching: [
+  //         {
+  //           handler: 'networkFirst',
+  //           urlPattern: /^https?.*/
+  //         }
+  //       ]
+  //     })
+  //   )
+  //   return config
+  // }
 }
