@@ -7,6 +7,9 @@ import Layout from '../components/Layout';
 @inject('store')
 @observer
 class Page extends React.Component<any, any> {
+  componentDidMount() {
+    console.log(this.props.store);
+  }
   render() {
     return (
       <Layout>
